@@ -26,6 +26,18 @@ var guests = [
         phoneNumber: "255-555",
         customerEmail: "kriss@email.com",
         customerID: "03"
+    },
+    {
+        customerName: "Kris",
+        phoneNumber: "255-555",
+        customerEmail: "kriss@email.com",
+        customerID: "03"
+    },
+    {
+        customerName: "Kris",
+        phoneNumber: "255-555",
+        customerEmail: "kriss@email.com",
+        customerID: "03"
     }
 ];
 
@@ -43,13 +55,60 @@ app.get("/tables", function (req, res) {
     res.sendFile(path.join(__dirname, "./tables.html"));
 });
 
-app.get("/api/reserve", function (req, res) {
+app.get("/reserve", function (req, res) {
     res.sendFile(path.join(__dirname, "./reserve.html"));
 });
 
-app.post("/api/reserve", function (req, res) {
-    res.sendFile(path.join(__dirname, "./reserve.html"));
-    console.log(path.join(__dirname, "./reserve.html"));
+
+app.get("/api/tables", function (req, res) {
+
+    var temp =[];
+    
+   if (guests.length < 6) {
+     return res.json(guests);
+   } else {
+       for (var i = 0; i < 5; i++) {
+           temp.push((guests[i]));
+           console.log(temp);
+       }
+       return res.json(temp);
+   }
+});
+
+app.get("/api/waitlist", function (req, res) {
+    var tempTwo = [];
+    if (guests.length > 6) {
+        for (var i = 5; i < guests.length; i++)
+        {
+            tempTwo.push(guests[i]);
+        }
+
+        return res.json(tempTwo);
+    } else {
+        console.log('hi')
+    }
+});
+
+
+app.post("/api/tables", function (req, res) {
+    // res.sendFile(path.join(__dirname, "./reserve.html"));
+    // console.log(path.join(__dirname, "./reserve.html"));
+
+    var newReservation = req.body;
+
+    console.log(newReservation);
+
+    guests.push(newReservation);
+
+    res.json(newReservation);
+
+
+
+});
+
+app.post("/api/waitlist", function (req, res) {
+    // res.sendFile(path.join(__dirname, "./reserve.html"));
+    // console.log(path.join(__dirname, "./reserve.html"));
 
     var newReservation = req.body;
 
