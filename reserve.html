@@ -1,0 +1,23 @@
+
+
+
+
+<script type="text/javascript">
+    // Question: What does this code do?
+    $("#add-btn").on("click", function (event) {
+        event.preventDefault();
+        var newReservation = {
+            customerName: $("#reserve-name").val().trim(),
+            phoneNumber: $("#reserve-number").val().trim(),
+            customerEmail: $("#reserve-email").val().trim(),
+            customerID: $("#reserve-uniqueID").val().trim()
+        };
+
+        // Question: What does this code do??
+        $.post("/api/new", newReservation)
+            .then(function (data) {
+                console.log("reserve.html", data);
+                alert("Adding reservation...");
+            });
+    });
+</script>
