@@ -34,17 +34,22 @@ var guests = [
 // ----------------------------------
 
 app.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "index.html"));
+    res.sendFile(path.join(__dirname, "./index.html"));
 });
 
 
 
 app.get("/tables", function (req, res) {
-    res.sendFile(path.join(__dirname, "table.html"));
+    res.sendFile(path.join(__dirname, "./table.html"));
 });
 
-app.post("/api/new", function (req, res) {
-    // res.sendFile(path.join(__dirname, "reserve.html"));
+app.get("/api/reserve", function (req, res) {
+    res.sendFile(path.join(__dirname, "./reserve.html"));
+});
+
+app.post("/api/reserve", function (req, res) {
+    res.sendFile(path.join(__dirname, "./reserve.html"));
+    console.log(path.join(__dirname, "./reserve.html"));
 
     var newReservation = req.body;
 

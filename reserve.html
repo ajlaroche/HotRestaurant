@@ -67,22 +67,23 @@
 
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="http://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
         crossorigin="anonymous"></script>
     <script type="text/javascript">
-      
+    
+    
         $("#add-btn").on("click", function (event) {
             event.preventDefault();
             var newReservation = {
-                customerName: $("#reserve-name").val().trim(),
-                phoneNumber: $("#reserve-number").val().trim(),
-                customerEmail: $("#reserve-email").val().trim(),
-                customerID: $("#reserve-uniqueID").val().trim()
+                customerName: $("#reserve_name").val().trim(),
+                phoneNumber: $("#reserve_phone").val().trim(),
+                customerEmail: $("#reserve_email").val().trim(),
+                customerID: $("#reserve_uniqueID").val().trim()
             };
-            $.post("/api/new", newReservation)
+            $.post("/api/reserve", newReservation)
                 .then(function (data) {
                     console.log("reserve.html", data);
                     alert("Adding reservation...");
