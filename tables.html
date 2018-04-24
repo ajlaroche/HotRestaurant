@@ -15,24 +15,75 @@
 <body>
     <div class="container">
         <div class="jumbotron mx-auto ">
-            <h1 class="display-4 text-center">Hot Restaurant</h1>
+            <h1 class="display-4 text-center"> <i class="fas fa-fire"></i>Hot Restaurant</h1>
             <!-- <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p> -->
             <!-- <hr class="my-4">
         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p> -->
             <div class="text-center">
-                <a class="btn btn-danger btn-lg" href="#" role="button">Make Reservation</a>
-                <a class="btn btn-primary btn-lg" href="#" role="button"><i class="fas fa-home"></i></a>
-                
+                <a class="btn btn-danger btn-lg" href="#" role="button"><i class="fas fa-utensils"></i> Make Reservation</a>
+                <a class="btn btn-primary btn-lg" href="#" role="button">
+                    <i class="fas fa-home"></i>
+                </a>
+
             </div>
         </div>
-        <div class="row directory">
-            <a href="/api/friends">API Tables</a> |
-            <a href="https://github.com/ajlaroche/FriendFinder.git">API waitlist</a>
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <!-- Current Tables in Use -->
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h4 class="card-title">Current Reservations</h4>
+                    </div>
+                    <ul class="list-group list-group-flush" id="tableSection">
+                        <li class="list-group-item" id="tablecard-text-01">
+                            <h2>
+                                <span class="label label-primary">1</span> | </h2>
+                        </li>
+                        <li class="list-group-item" id="tablecard-text-11">
+                            <h2>
+                                <span class="label label-primary">2</span> | </h2>
+                        </li>
+                        <li class="list-group-item" id="tablecard-text-21">
+                            <h2>
+                                <span class="label label-primary">3</span> | </h2>
+                        </li>
+                        <li class="list-group-item" id="tablecard-text-31">
+                            <h2>
+                                <span class="label label-primary">4</span> | </h2>
+                        </li>
+                        <li class="list-group-item" id="tablecard-text-41">
+                            <h2>
+                                <span class="label label-primary">5</span> | </h2>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Waiting List card -->
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h4 class="card-title">Waiting List</h4>
+                    </div>
+                    <div class="card-body" id="waitlistSection">
+                        <div class="card-text" id="waitlistcard-text-01">
+                            <h2>
+                                <span class="label label-primary">1</span> | 121214</h2>
+                        </div>
+                        <div class="card-text" id="waitlistcard-text-11">
+                            <h2>
+                                <span class="label label-primary">2</span> | </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-
-
+        <div class="row directory">
+                <a href="/api/friends">API Tables</a> |
+                <a href="https://github.com/ajlaroche/FriendFinder.git">API waitlist</a>
+            </div>
     </div>
-
+   
 
 
 
